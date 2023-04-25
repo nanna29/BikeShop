@@ -3,16 +3,15 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:BikeShop"
+      
+      xmlns:data="clr-namespace:BikeShop"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Discussion">
+      Title="Discussion"
+      Background="{StaticResource background}"
+>
 
     <Grid>
-        <!--<TextBox Margin="38,0,304,29" TextWrapping="Wrap" Text="Type your message here" FontSize="24" Height="95" VerticalAlignment="Bottom"/>
-        <Button Content="Send" Margin="0,0,38,29" FontSize="24" Height="95" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="228"/>
-        <ListBox Margin="38,29,38,155" />-->
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="100"/>
@@ -21,9 +20,44 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="1" Grid.Column="1" Content="Send" Margin="5"/>
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                Margin="5"
+                Content="Send">
+            
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Fill="#AA000000" Margin="10,10,0,0"/>
+                        <Ellipse Fill="{TemplateBinding Background}" Margin="0,0,10,10"/>
+                        <Viewbox Margin="5,5,15,15">
+                            <ContentPresenter/>
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+            
+        </Button>
+        
+        
         <TextBox Grid.Row="1" Text="Text your message here" Margin="5"/>
-        <ListBox Grid.ColumnSpan="2" Margin="5"/>
+        <ListBox Grid.ColumnSpan="2" Margin="5">
+            <ListBox.ItemsSource>
+                <data:Talk/>
+            </ListBox.ItemsSource>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Width="300">
+                        <StackPanel Orientation="Horizontal">
+                            <!--수평으로 이미지랑, 보내는 사람 한 줄에-->
+                            <Image Source="chat.png" Width="20"/>
+                            <TextBlock Text="{Binding Sender}"/>
+                        </StackPanel>
+                        <TextBlock Text="{Binding Content}" Margin="20,0,0,0" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <!--ColumnSpan: 2개 이상의 가로줄에 있는 칸을 병합-->
 
     </Grid>

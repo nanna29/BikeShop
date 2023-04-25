@@ -6,10 +6,14 @@
       xmlns:local="clr-namespace:BikeShop"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Contact">
+      Title="Contact"
+      Background="{StaticResource background}"
+      >
 
     <Grid>
-        <TextBox Margin="24,266,28,22" TextWrapping="Wrap" Text="TextBox"/>
-        <TextBox Height="226" Margin="24,10,28,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <TextBox Margin="94,97,67,0" TextWrapping="Wrap" Height="259" VerticalAlignment="Top"/>
+        <TextBox Height="31" Margin="94,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="639"/>
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="10,26,0,0" TextWrapping="Wrap" Text="Sender" VerticalAlignment="Top" Width="56" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="10,110,0,0" TextWrapping="Wrap" Text="Message" VerticalAlignment="Top" Width="79" FontSize="16"/>
     </Grid>
 </Page>

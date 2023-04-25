@@ -6,13 +6,34 @@
       xmlns:local="clr-namespace:BikeShop"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Menu">
+      Title="Menu"
+      Background="{StaticResource background}">
 
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="#AA000000" Margin="10,10,0,0"/>
+                            <Ellipse Fill="{TemplateBinding Background}" Margin="0,0,10,10"/>
+                            <Viewbox Margin="5,5,15,15">
+                                <ContentPresenter/>
+                            </Viewbox>
+                        </Grid>
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    
     <Grid>
-        <Button Content="products" HorizontalAlignment="Left" Height="97" Margin="73,62,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="products" HorizontalAlignment="Left" Height="97" Margin="73,62,0,0" VerticalAlignment="Top" Width="175" Click="Button_Click_2"/>
         <Button Content="Email Support" HorizontalAlignment="Left" Height="97" Margin="501,62,0,0" VerticalAlignment="Top" Width="175" Click="Button_Click"/>
         <Button Content="Live support" HorizontalAlignment="Left" Height="97" Margin="280,62,0,0" VerticalAlignment="Top" Width="175" Click="Button_Click_1"/>
-        <TextBlock HorizontalAlignment="Left" Height="179" TextWrapping="Wrap" VerticalAlignment="Top" Width="516" Margin="110,225,0,0" FontSize="24" FontStyle="Italic"><Run Language="ko-kr" Text="Adventure Work"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="202" TextWrapping="Wrap" VerticalAlignment="Top" Width="603" Margin="73,199,0,0" FontSize="24" FontStyle="Italic"><Run Language="ko-kr" Text="Adventure Work"/></TextBlock>
 
     </Grid>
 </Page>
