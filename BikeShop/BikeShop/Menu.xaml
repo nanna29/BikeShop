@@ -13,10 +13,19 @@
         <Style TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
-                    
+
                     <ControlTemplate TargetType="Button">
-                        <Grid>
-                            <Ellipse Fill="#AA000000" Margin="10,10,0,0"/>
+                        <Grid Margin="0,0,0,-68">
+                            <Ellipse Fill="#AA000000" Margin="10,10,0,0" RenderTransformOrigin="0.5,0.5">
+                                <Ellipse.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="41.931"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
                             <Ellipse Fill="{TemplateBinding Background}" Margin="0,0,10,10"/>
                             <Viewbox Margin="5,5,15,15">
                                 <ContentPresenter/>
@@ -28,12 +37,12 @@
             </Setter>
         </Style>
     </Page.Resources>
-    
+
     <Grid>
-        <Button Content="products" HorizontalAlignment="Left" Height="97" Margin="73,62,0,0" VerticalAlignment="Top" Width="175" Click="Button_Click_2"/>
-        <Button Content="Email Support" HorizontalAlignment="Left" Height="97" Margin="501,62,0,0" VerticalAlignment="Top" Width="175" Click="Button_Click"/>
-        <Button Content="Live support" HorizontalAlignment="Left" Height="97" Margin="280,62,0,0" VerticalAlignment="Top" Width="175" Click="Button_Click_1"/>
-        <TextBlock HorizontalAlignment="Left" Height="202" TextWrapping="Wrap" VerticalAlignment="Top" Width="603" Margin="73,199,0,0" FontSize="24" FontStyle="Italic"><Run Language="ko-kr" Text="Adventure Work"/></TextBlock>
+        <Button Background="Black" Content="products" HorizontalAlignment="Left" Height="96" Margin="75,80,0,0" VerticalAlignment="Top" Width="175" Click="Button_Click_2" Foreground="White"/>
+        <Button Background="Black" Content="Email Support" HorizontalAlignment="Left" Height="97" Margin="553,80,0,0" VerticalAlignment="Top" Width="175" Click="Button_Click" Foreground="White"/>
+        <Button Background="Black" Content="Live support" HorizontalAlignment="Center" Height="97" Margin="0,80,0,0" VerticalAlignment="Top" Width="176" Click="Button_Click_1" Foreground="White"/>
+        <TextBlock Height="58" TextWrapping="Wrap" VerticalAlignment="Top" Width="418" Margin="0,269,0,0" FontSize="48" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center"><Run Language="ko-kr" Text="Adventure Works"/></TextBlock>
 
     </Grid>
 </Page>
